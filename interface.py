@@ -1,3 +1,4 @@
 import tkinter
 import opencv
-print("hello world")
+
+for i = 1:
