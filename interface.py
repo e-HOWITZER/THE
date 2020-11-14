@@ -17,11 +17,22 @@ class App(tk.Frame):
         self.moveright["text"] = "Derecha"
         self.moveright["command"] = self.right
         self.moveright.grid(row=1,column=1)
+        self.shoot = tk.Button(self,width=40,height=2,fg="blue")
+        self.shoot["text"] = "Disparo"
+        self.shoot["command"] = self.launch
+        self.shoot.grid(row=2,columnspan=2)
+        self.end = tk.Button(self,width=20,height=2,text="Cerrar",command=self.quit,fg="red")
+        self.end.grid(row=5,columnspan=2)
     def left(self):
         print("por ahora nada")
     def right(self):
         print("por ahora nada")
-
+    def up(self):
+        print("por ahora nada")
+    def down(self):
+        print("por ahora nada")
+    def launch(self):
+        print("por ahora nada")
 
 root = tk.Tk()
 root.title("THE")
