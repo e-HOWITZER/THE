@@ -1,26 +1,30 @@
 import tkinter as tk
+import tkinter.ttk as ttk
 import numpy
 import cv2
-
-class interface(tk.Frame):
-    def __init__(self, master=None):
+class App(tk.Frame):
+    def __init__(self,master=None):
         super().__init__(master)
         self.master = master
         self.pack()
         self.create_widgets()
-
     def create_widgets(self):
-        self.hi_there = tk.Button(self)
-        self.hi_there["text"] = "Hello World\n(click me)"
-        self.hi_there["command"] = self.say_hi
-        self.hi_there.pack(side="top")
+        self.moveleft = tk.Button(self,width=20,height=2)
+        self.moveleft["text"] = "Izquierda"
+        self.moveleft["command"] = self.left
+        self.moveleft.grid(row=1,column=0)
+        self.moveright = tk.Button(self,width=20,height=2)
+        self.moveright["text"] = "Derecha"
+        self.moveright["command"] = self.right
+        self.moveright.grid(row=1,column=1)
+    def left(self):
+        print("por ahora nada")
+    def right(self):
+        print("por ahora nada")
 
-        self.quit = tk.Button(self, text="QUIT", fg="red",
-                              command=self.master.destroy)
-        self.quit.pack(side="bottom")
 
-    def say_hi(self):
-        print("hi there, everyone!")
 root = tk.Tk()
-app = interface(master=root)
+root.title("THE")
+root.geometry('300x500+100+300')
+app = App(master=root)
 app.mainloop()
